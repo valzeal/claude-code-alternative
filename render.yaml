@@ -1,0 +1,26 @@
+services:
+  # Zeal Code API Service
+  - type: web
+    name: zeal-code-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api_framework.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: PYTHON_VERSION
+        value: 3.11
+
+  # Zeal Code UI Service
+  - type: web
+    name: zeal-code-ui
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run ui/web_interface.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: PORT
+        value: 8501
+      - key: PYTHON_VERSION
+        value: 3.11
