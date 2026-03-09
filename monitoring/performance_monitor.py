@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Performance Monitoring (Phase 4)
+Zeal Code - Performance Monitoring (Phase 4)
 Performance tracking and monitoring for production deployment
 """
 

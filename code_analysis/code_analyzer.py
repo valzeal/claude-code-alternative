@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Code Analysis Engine
+Zeal Code - Code Analysis Engine
 Analyzes code structure, quality, and provides insights
 """
 

@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - API Integration and Testing
+Zeal Code - API Integration and Testing
 Integrates core modules and provides testing functionality
 """
 

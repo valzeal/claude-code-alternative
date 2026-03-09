@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - CLI Interface (Phase 3)
+Zeal Code - CLI Interface (Phase 3)
 Command Line Interface for code analysis, generation, and review
 """
 
@@ -11,7 +11,7 @@ import os
 
 
 class ClaudeCodeCLI:
-    """Command Line Interface for Claude Code Alternative"""
+    """Command Line Interface for Zeal Code"""
 
     def __init__(self):
         """Initialize CLI"""
@@ -230,19 +230,19 @@ class ClaudeCodeCLI:
     def run(self) -> int:
         """Run the CLI"""
         parser = argparse.ArgumentParser(
-            description='Claude Code Alternative - AI-powered code analysis and generation',
+            description='Zeal Code - AI-powered code analysis and generation',
             formatter_class=argparse.RawDescriptionHelpFormatter,
             epilog="""
 Examples:
-  cca analyze script.py
-  cca generate "Create a function to sort an array"
-  cca review app.js --language javascript --output json
-  cca debug server.py --verbose
+  zeal-code analyze script.py
+  zeale-code generate "Create a function to sort an array"
+  zeale-code review app.js --language javascript --output json
+  zeale-code debug server.py --verbose
 
 Configuration:
-  Config file: ~/.cca/config.json
+  Config file: ~/.zeal-code/config.json
 
-For more information, visit: https://github.com/valzeal/claude-code-alternative
+For more information, visit: https://github.com/valzeal/zeal-code
             """
         )
 

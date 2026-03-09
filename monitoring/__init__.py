@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Monitoring Module (Phase 4)
+Zeal Code - Monitoring Module (Phase 4)
 Performance tracking and monitoring for production deployment
 """
 

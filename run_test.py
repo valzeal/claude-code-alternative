@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Quick test script for Claude Code Alternative
+Quick test script for Zeal Code
 """
 
 from code_generation.code_generator import CodeGenerator
@@ -9,7 +9,7 @@ from nlp_module.nlp_processor import NLPProcessor
 def test_code_generation():
     """Test code generation functionality"""
     print("=" * 60)
-    print("Testing Claude Code Alternative")
+    print("Testing Zeal Code")
     print("=" * 60)
 
     # Test 1: Code Generation

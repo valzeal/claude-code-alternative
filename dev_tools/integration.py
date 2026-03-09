@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Development Tools Integration (Phase 3)
+Zeal Code - Development Tools Integration (Phase 3)
 Integration with VS Code, JetBrains, and other development tools
 """
 
@@ -37,7 +37,7 @@ class DevelopmentToolsIntegrator:
             tool_type='ide',
             supported_languages=['python', 'javascript', 'typescript', 'java', 'c++', 'c#', 'go', 'rust', 'php', 'swift', 'kotlin'],
             config_schema={
-                'extension_id': 'claude-code-alternative.extension',
+                'extension_id': 'zeal-code.extension',
                 'api_version': '1.0.0',
                 'commands': {
                     'analyze': 'cca.analyze',
@@ -58,7 +58,7 @@ class DevelopmentToolsIntegrator:
             tool_type='ide',
             supported_languages=['python', 'javascript', 'typescript', 'java', 'c++', 'c#', 'go', 'rust', 'php', 'kotlin'],
             config_schema={
-                'plugin_id': 'com.claudecodealternative.plugin',
+                'plugin_id': 'com.zealcode.plugin',
                 'plugin_version': '1.0.0',
                 'supported_ides': [
                     'PyCharm', 'IntelliJ IDEA', 'WebStorm', 'CLion',
@@ -78,7 +78,7 @@ class DevelopmentToolsIntegrator:
             supported_languages=['python', 'javascript', 'typescript', 'java', 'c++', 'c#', 'go', 'rust', 'php', 'kotlin'],
             config_schema={
                 'plugin_manager': 'vim-plug',
-                'plugin_repository': 'https://github.com/claude-code-alternative/vim-plugin',
+                'plugin_repository': 'https://github.com/zeal-code/vim-plugin',
                 'commands': {
                     'analyze': ':CCAAnalyze',
                     'generate': ':CCAGenerate',
@@ -97,8 +97,8 @@ class DevelopmentToolsIntegrator:
             tool_type='editor',
             supported_languages=['python', 'javascript', 'typescript', 'java', 'c++', 'c#', 'go', 'rust', 'php'],
             config_schema={
-                'plugin_path': 'Packages/ClaudeCodeAlternative',
-                'plugin_repository': 'https://github.com/claude-code-alternative/sublime-plugin',
+                'plugin_path': 'Packages/ZealCode',
+                'plugin_repository': 'https://github.com/zeal-code/sublime-plugin',
                 'commands': {
                     'analyze': 'ctrl+shift+a',
                     'generate': 'ctrl+shift+g',
@@ -116,8 +116,8 @@ class DevelopmentToolsIntegrator:
             tool_type='editor',
             supported_languages=['python', 'javascript', 'typescript', 'java', 'c++', 'c#', 'go', 'rust', 'php'],
             config_schema={
-                'plugin_name': 'claude-code-alternative',
-                'plugin_repository': 'https://github.com/claude-code-alternative/atom-plugin',
+                'plugin_name': 'zeal-code',
+                'plugin_repository': 'https://github.com/zeal-code/atom-plugin',
                 'commands': {
                     'analyze': 'ctrl-alt-a',
                     'generate': 'ctrl-alt-g',
@@ -209,8 +209,8 @@ class DevelopmentToolsIntegrator:
     def generate_vscode_extension_manifest(self) -> Dict[str, Any]:
         """Generate VS Code extension manifest"""
         return {
-            "name": "claude-code-alternative",
-            "displayName": "Claude Code Alternative",
+            "name": "zeal-code",
+            "displayName": "Zeal Code",
             "description": "AI-powered code analysis, generation, and review",
             "version": "1.0.0",
             "publisher": "valzeal",
@@ -239,19 +239,19 @@ class DevelopmentToolsIntegrator:
                 "commands": [
                     {
                         "command": "cca.analyze",
-                        "title": "Claude Code: Analyze Code"
+                        "title": "Zeal Code: Analyze Code"
                     },
                     {
                         "command": "cca.generate",
-                        "title": "Claude Code: Generate Code"
+                        "title": "Zeal Code: Generate Code"
                     },
                     {
                         "command": "cca.review",
-                        "title": "Claude Code: Review Code"
+                        "title": "Zeal Code: Review Code"
                     },
                     {
                         "command": "cca.debug",
-                        "title": "Claude Code: Debug Code"
+                        "title": "Zeal Code: Debug Code"
                     }
                 ],
                 "keybindings": [
@@ -267,7 +267,7 @@ class DevelopmentToolsIntegrator:
                     }
                 ],
                 "configuration": {
-                    "title": "Claude Code Alternative",
+                    "title": "Zeal Code",
                     "properties": {
                         "cca.apiKey": {
                             "type": "string",
@@ -297,7 +297,7 @@ class DevelopmentToolsIntegrator:
     def generate_cli_help(self) -> str:
         """Generate CLI help text"""
         help_text = """
-Claude Code Alternative - Command Line Interface
+Zeal Code - Command Line Interface
 ================================================
 
 Usage: cca [command] [options]
@@ -339,7 +339,7 @@ Configuration:
     "defaultOutputFormat": "text"
   }
 
-For more information, visit: https://github.com/valzeal/claude-code-alternative
+For more information, visit: https://github.com/valzeal/zeal-code
 """
         return help_text
 
@@ -358,7 +358,7 @@ For more information, visit: https://github.com/valzeal/claude-code-alternative
             return None
 
         doc = f"""
-{tool.tool_name} Plugin - Claude Code Alternative
+{tool.tool_name} Plugin - Zeal Code
 {'=' * (len(tool.tool_name) + 30)}
 
 Supported Languages: {', '.join(tool.supported_languages)}
@@ -367,7 +367,7 @@ Installation:
 """
         if tool.tool_type == 'ide':
             doc += f"  1. Install the plugin from your IDE's plugin marketplace\n"
-            doc += f"  2. Search for 'Claude Code Alternative'\n"
+            doc += f"  2. Search for 'Zeal Code'\n"
             doc += f"  3. Click Install and restart your IDE\n"
         elif tool.tool_type == 'editor':
             doc += f"  1. Follow the installation instructions at:\n"
@@ -375,7 +375,7 @@ Installation:
             doc += f"  2. Configure your editor settings\n"
         elif tool.tool_type == 'cli':
             doc += f"  1. Download the CLI tool from:\n"
-            doc += f"     https://github.com/valzeal/claude-code-alternative/releases\n"
+            doc += f"     https://github.com/valzeal/zeal-code/releases\n"
             doc += f"  2. Extract and add to your PATH\n"
 
         doc += f"""
@@ -392,7 +392,7 @@ Commands:
 
         doc += f"""
 For more information and advanced usage, see the documentation at:
-https://github.com/valzeal/claude-code-alternative/wiki
+https://github.com/valzeal/zeal-code/wiki
 """
         return doc
 

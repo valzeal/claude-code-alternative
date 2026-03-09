@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Deployment Preparation (Phase 4)
+Zeal Code - Deployment Preparation (Phase 4)
 Prepare for production deployment
 """
 
@@ -76,7 +76,7 @@ class DeploymentManager:
             # Generate version and build number
             version = "1.0.0"
             build_number = f"build-{int(time.time())}"
-            package_name = f"claude-code-alternative-{version}-{build_number}.tar.gz"
+            package_name = f"zeal-code-{version}-{build_number}.tar.gz"
             package_path = os.path.join(output_dir, package_name)
 
             # Create temporary directory for packaging
@@ -102,7 +102,8 @@ class DeploymentManager:
 
             # Create package archive
             import tarfile
-            with tarfile.open(package_path, 'w:gz') as tar:
+            package_name = f"zeal-code-{version}-{build_number}.tar.gz"
+            package_path = os.path.join(output_dir, package_name)
                 tar.add(temp_dir, arcname=os.path.basename(temp_dir))
 
             # Cleanup
@@ -219,7 +220,7 @@ class DeploymentManager:
         """
         try:
             script = f'''#!/bin/bash
-# Claude Code Alternative - Deployment Script
+# Zeal Code - Deployment Script
 # Environment: {environment}
 # Generated: {time.strftime("%Y-%m-%d %H:%M:%S")}
 
@@ -230,9 +231,9 @@ echo "Starting deployment for environment: {environment}"
 # Configuration
 PROJECT_DIR="{self.project_root}"
 DEPLOY_USER="deploy"
-DEPLOY_HOST="claude.example.com"
-REMOTE_DIR="/var/www/claude-code-alternative"
-BACKUP_DIR="/var/backups/claude-code-alternative"
+DEPLOY_HOST="zeal.example.com"
+REMOTE_DIR="/var/www/zeal-code"
+BACKUP_DIR="/var/backups/zeal-code"
 
 # Colors for output
 RED='\\033[0;31m'
@@ -270,7 +271,7 @@ ssh ${{DEPLOY_USER}}@${{DEPLOY_HOST}} "mkdir -p ${{BACKUP_DIR}} && tar -czf ${{B
 
 # Stop current deployment
 log_info "Stopping current deployment..."
-ssh ${{DEPLOY_USER}}@${{DEPLOY_HOST}} "cd ${{REMOTE_DIR}} && sudo systemctl stop claude-code-alternative"
+ssh ${{DEPLOY_USER}}@${{DEPLOY_HOST}} "cd ${{REMOTE_DIR}} && sudo systemctl stop zeal-code"
 
 # Deploy new version
 log_info "Deploying new version..."
@@ -287,7 +288,7 @@ ssh ${{DEPLOY_USER}}@${{DEPLOY_HOST}} "cd ${{REMOTE_DIR}} && python3 manage.py m
 
 # Restart service
 log_info "Restarting service..."
-ssh ${{DEPLOY_USER}}@${{DEPLOY_HOST}} "cd ${{REMOTE_DIR}} && sudo systemctl start claude-code-alternative"
+ssh ${{DEPLOY_USER}}@${{DEPLOY_HOST}} "cd ${{REMOTE_DIR}} && sudo systemctl start zeal-code"
 
 # Health check
 log_info "Running health check..."
@@ -297,7 +298,7 @@ if curl -f http://localhost:8000/health > /dev/null 2>&1; then
 else
     log_error "Health check failed!"
     log_info "Rolling back..."
-    ssh ${{DEPLOY_USER}}@${{DEPLOY_HOST}} "cd ${{REMOTE_DIR}} && sudo systemctl stop claude-code-alternative && tar -xzf ${{BACKUP_DIR}}/backup-*.tar.gz -C ${{REMOTE_DIR}} && sudo systemctl start claude-code-alternative"
+    ssh ${{DEPLOY_USER}}@${{DEPLOY_HOST}} "cd ${{REMOTE_DIR}} && sudo systemctl stop zeal-code && tar -xzf ${{BACKUP_DIR}}/backup-*.tar.gz -C ${{REMOTE_DIR}} && sudo systemctl start zeal-code"
     exit 1
 fi
 
@@ -369,7 +370,7 @@ CMD ["python3", "-m", "api", "run"]
             docker_compose = '''version: '3.8'
 
 services:
-  claude-code-alternative:
+  zeal-code:
     build: .
     ports:
       - "8000:8000"
@@ -445,7 +446,7 @@ volumes:
 
 # Example usage
 if __name__ == "__main__":
-    manager = DeploymentManager('/home/ridzeal/.openclaw/workspace/projects/claude-code-alternative')
+    manager = DeploymentManager('/home/ridzeal/.openclaw/workspace/projects/zeal-code')
 
     # Generate checklist
     checklist = manager.generate_deployment_checklist()

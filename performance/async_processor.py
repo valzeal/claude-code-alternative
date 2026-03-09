@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Async Processor (Phase 3)
+Zeal Code - Async Processor (Phase 3)
 Asynchronous processing for improved performance
 """
 

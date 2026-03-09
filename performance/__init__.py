@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Performance Optimization Module (Phase 3)
+Zeal Code - Performance Optimization Module (Phase 3)
 """
 
 from .cache_manager import CacheManager, cached, CodeAnalysisCache

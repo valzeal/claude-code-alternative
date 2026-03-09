@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Testing Module (Phase 4)
+Zeal Code - Testing Module (Phase 4)
 Comprehensive testing and QA for all modules
 """
 
@@ -378,7 +378,7 @@ def run_test_suite() -> List[TestResult]:
 # Example usage
 if __name__ == "__main__":
     print("=" * 60)
-    print("Claude Code Alternative - Comprehensive Test Suite")
+    print("Zeal Code - Comprehensive Test Suite")
     print("=" * 60)
     
     results = run_test_suite()

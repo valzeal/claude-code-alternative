@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Debugging and Testing Module
+Zeal Code - Debugging and Testing Module
 Helps identify and fix bugs, generates test cases, and provides debugging assistance
 """
 

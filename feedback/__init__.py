@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - User Feedback Module (Phase 4)
+Zeal Code - User Feedback Module (Phase 4)
 Collect, manage, and analyze user feedback
 """
 

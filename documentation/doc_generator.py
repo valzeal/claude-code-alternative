@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Documentation Generation Module
+Zeal Code - Documentation Generation Module
 Automatically generates documentation from code
 """
 

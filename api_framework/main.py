@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - API Framework
+Zeal Code - API Framework
 FastAPI-based REST API for the code assistant
 """
 
@@ -12,7 +12,7 @@ import uvicorn
 from nlp_module.nlp_processor import NLPProcessor
 
 app = FastAPI(
-    title="Claude Code Alternative API",
+    title="Zeal Code API",
     description="API for code generation and analysis assistant",
     version="1.0.0"
 )
@@ -40,7 +40,7 @@ class CodeResponse(BaseModel):
 @app.get("/")
 def root():
     """Health check endpoint"""
-    return {"status": "running", "service": "Claude Code Alternative API"}
+    return {"status": "running", "service": "Zeal Code API"}
 
 @app.post("/analyze", response_model=CodeResponse)
 def analyze_code_request(request: CodeRequest):
@@ -96,7 +96,7 @@ def health_check():
     """Health check endpoint"""
     return {
         "status": "healthy",
-        "service": "Claude Code Alternative API",
+        "service": "Zeal Code API",
         "nlp_initialized": nlp_processor is not None
     }
 

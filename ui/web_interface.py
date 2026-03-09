@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Web User Interface
+Zeal Code - Web User Interface
 Basic web interface for the code assistant
 """
 
@@ -19,7 +19,7 @@ class WebInterface:
     def setup_page(self):
         """Setup the Streamlit page"""
         st.set_page_config(
-            page_title="Claude Code Alternative",
+            page_title="Zeal Code",
             page_icon="🚀",
             layout="wide"
         )
@@ -42,12 +42,12 @@ class WebInterface:
     
     def render_home_page(self):
         """Render the home page"""
-        st.title("🚀 Claude Code Alternative")
+        st.title("🚀 Zeal Code")
         st.subheader("Your AI-powered code assistant")
         
         # Introduction
         st.markdown("""
-        Welcome to Claude Code Alternative! This AI-powered assistant helps you:
+        Welcome to Zeal Code! This AI-powered assistant helps you:
         - Generate code from natural language
         - Review and improve existing code
         - Debug and test your code

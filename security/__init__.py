@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Security Module (Phase 3)
+Zeal Code - Security Module (Phase 3)
 Security implementation with authentication and encryption
 """
 

@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Simple Encryption Module (Phase 3)
+Zeal Code - Simple Encryption Module (Phase 3)
 Security implementation without external dependencies
 """
 

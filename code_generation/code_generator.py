@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Code Generation Engine
+Zeal Code - Code Generation Engine
 Generates code from natural language prompts and requirements
 """
 

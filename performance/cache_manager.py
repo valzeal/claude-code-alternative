@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Cache Manager (Phase 3)
+Zeal Code - Cache Manager (Phase 3)
 Performance optimization through intelligent caching
 """
 

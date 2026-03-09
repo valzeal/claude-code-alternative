@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Code Review and Refactoring Module
+Zeal Code - Code Review and Refactoring Module
 Analyzes code quality, identifies issues, and suggests improvements
 """
 

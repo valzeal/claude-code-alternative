@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Enhanced Code Analysis Engine (Phase 3)
+Zeal Code - Enhanced Code Analysis Engine (Phase 3)
 Advanced language support with better parsing, complexity calculation, and issue detection
 """
 

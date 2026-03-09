@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Natural Language Processing Module
+Zeal Code - Natural Language Processing Module
 Handles text parsing, understanding, and intent recognition
 """
 

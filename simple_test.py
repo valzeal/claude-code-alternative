@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simple test script for Claude Code Alternative - No external dependencies
+Simple test script for Zeal Code - No external dependencies
 """
 
 from code_generation.code_generator import CodeGenerator
@@ -8,7 +8,7 @@ from code_generation.code_generator import CodeGenerator
 def test_code_generation():
     """Test code generation functionality"""
     print("=" * 60)
-    print("Testing Claude Code Alternative - Code Generation")
+    print("Testing Zeal Code - Code Generation")
     print("=" * 60)
 
     # Initialize generator

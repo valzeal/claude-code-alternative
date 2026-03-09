@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Deployment Module (Phase 4)
+Zeal Code - Deployment Module (Phase 4)
 Prepare for production deployment
 """
 

@@ -1,5 +1,5 @@
 """
-Claude Code Alternative - Simple Authentication Module (Phase 3)
+Zeal Code - Simple Authentication Module (Phase 3)
 Security implementation without external dependencies
 """
 
