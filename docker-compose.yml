@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  zeal-code-api:
+    build:
+      context: .
+      dockerfile: api_framework/Dockerfile
+    container_name: zeal-code-api
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - zeal-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  zeal-code-ui:
+    build:
+      context: .
+      dockerfile: ui/Dockerfile
+    container_name: zeal-code-ui
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8501:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - STREAMLIT_LOGGER_LEVEL=info
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - zeal-network
+    depends_on:
+      - zeal-code-api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  zeal-network:
+    driver: bridge
+
+volumes:
+  logs:
+    driver: local
